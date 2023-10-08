@@ -4,6 +4,7 @@ import 'package:money_managment/db/category/category_db.dart';
 import 'package:money_managment/db/transactions/transaction_db.dart';
 import 'package:money_managment/models/category/category_model.dart';
 import 'package:money_managment/models/transactions/transaction_model.dart';
+import 'package:intl/intl.dart';
 
 class TransactionScreen extends StatelessWidget {
   const TransactionScreen({super.key});
@@ -69,10 +70,10 @@ class TransactionScreen extends StatelessWidget {
   }
 
   String parseDate(DateTime date) {
-    // final date1 = .MMMd().format(date);
-    // final splittedDate = date1.split(' ');
+    final date1 = DateFormat.MMMd().format(date);
+    final splittedDate = date1.split(' ');
 
-    // return '${splittedDate[1]}\n${splittedDate[0]}';
-    return '${date.day}\n${date.month} ';
+    return '${splittedDate[1]}\n${splittedDate[0]}';
+    // return '${date.day}\n${date.month} ';
   }
 }
